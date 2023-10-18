@@ -51,8 +51,53 @@
     object-fit: cover;
 }
 
+/* Initial CSS for the "reveal" class */
+.reveal {
+    opacity: 0;
+    transition: opacity 0.5s ease;
+}
+
+/* CSS for the "active" class */
+.active {
+    opacity: 1;
+}
+
+body {
+    animation: fadeInAnimation ease 3s;
+    animation-iteration-count: 1;
+    animation-fill-mode: forwards;
+}
+
+@keyframes fadeInAnimation {
+    0% {
+        opacity: 0;
+    }
+
+    100% {
+        opacity: 1;
+    }
+}
+
 .artwork-img {
     height: 400px;
+}
+
+.skills-container {
+    width: 400px;
+    height: 300px;
+}
+
+.gallery-container {
+    width: 400px;
+    height: 500px;
+}
+
+.counter::after {
+    content: '+';
+    font-size: 0.8em;
+    /* Adjust the font size as needed */
+    margin-left: 2px;
+    /* Adjust the margin as needed */
 }
 
 .award-container {
@@ -169,7 +214,6 @@ body,
 html {
     -ms-overflow-style: none !important;
     scrollbar-width: none !important;
-    height: 100%;
 }
 
 html,
@@ -706,8 +750,8 @@ div#preloader {
 /*  4. Intro Area
 /*--------------------------------*/
 .slide-area {
-    background: rgba(0, 0, 0, 0) url(img/background/main.jpg) no-repeat center center / cover;
-    width: 100%;
+    background: rgba(0, 0, 0, 0) url(img/background/main.jpg) no-repeat;
+    background-size: cover;
     height: 100%;
     position: relative;
     z-index: 1;

@@ -44,41 +44,7 @@
 
 
     <div id="preloader"></div>
-    <header>
 
-        <!-- mobile-menu-area start -->
-        <div class="mobile-menu-area hidden-lg hidden-md hidden-sm">
-            <div class="container">
-                <div class="row">
-                    <div class="col-md-12">
-                        <div class="mobile-menu">
-                            <div class="logo">
-                                <a href="index.html"><img src="img/logo/logo.png" alt="" /></a>
-                            </div>
-                            <nav id="dropdown">
-                                <ul>
-                                    <li><a class="pagess" href="index.html">Home</a>
-                                        <ul class="sub-menu">
-                                            <li><a href="index.html">Home 01</a></li>
-                                            <li><a href="index-2.html">Home 02</a></li>
-                                            <li><a href="index-3.html">Home 03</a></li>
-                                        </ul>
-                                    </li>
-                                    <li><a href="#about">About</a></li>
-                                    <li><a href="#service">Services</a></li>
-                                    <li><a href="#portfolio">Portfolio</a></li>
-                                    <li><a href="#blog">Latest Blog </a></li>
-                                    <li><a href="#contact">contacts</a></li>
-                                </ul>
-                            </nav>
-                        </div>
-                    </div>
-                </div>
-            </div>
-        </div>
-        <!-- mobile-menu-area end -->
-    </header>
-    <!-- header end -->
     <!-- Start Slider Area -->
     <div class="slide-area parallax-bg fix" data-stellar-background-ratio="0.6">
         <div class="display-table">
@@ -101,11 +67,18 @@
                                 <span class="title1">Artist, Architect & CEO / Business Owner</span>
                                 <h1 class="title2">Micaella A. Descalso</h1>
                                 <div class="slider-button">
-                                    <a class="slide-btn" href="#">Contact Me</a>
+                                    <a class="slide-btn" href="https://www.facebook.com/pandamead"
+                                        target="_blank">Contact Me</a>
                                 </div>
                             </div>
+
                         </div>
                         <!-- End Slider content -->
+
+                        <a href="#about" class="scroll-down-button">
+                            <i class="fa fa-arrow-down"></i>
+                        </a>
+
                     </div>
                 </div>
             </div>
@@ -184,7 +157,7 @@
         <div class="container container reveal">
             <div class="row">
                 <div class="col-md-12 col-sm-12 col-xs-12">
-                    <div class="section-headline white-headline text-center">
+                    <div class="section-headline white-headline text-center reveal">
                         <span class="top-head">Gallery</span>
                         <h3>My Artworks</h3>
                     </div>
@@ -271,8 +244,8 @@
     <div class="counter-area fix area-padding">
         <div class="container">
             <div class="row">
-                <div class="fun-text-all">
-                    <div class="col-md-3 col-sm-3 col-xs-12">
+                <div class="fun-text-all reveal">
+                    <div class="col-md-3 col-sm-3 col-xs-12 ">
                         <div class="fun_text">
                             <span class="counter-icon"><i class="flaticon-picture"></i></span>
                             <span class="counter">50</span>
@@ -313,9 +286,9 @@
 
     <!-- service area start -->
     <div id="services" class="services-area bg-color area-padding-2">
-        <div class="container">
+        <div class="container reveal">
             <div class="row">
-                <div class="col-md-12 col-sm-12 col-xs-12">
+                <div class="col-md-12 col-sm-12 col-xs-12 ">
                     <div class="section-headline white-headline text-center">
                         <span class="top-head">Skills</span>
                         <h3>Skills</h3>
@@ -794,15 +767,16 @@
     <!-- End Footer -->
     <script>
         document.addEventListener("DOMContentLoaded", function () {
-            function reveal() {
-                var reveals = document.querySelectorAll(".reveal");
+            var reveals = document.querySelectorAll(".reveal");
 
+            function reveal() {
+                var windowHeight = window.innerHeight;
                 for (var i = 0; i < reveals.length; i++) {
-                    var windowHeight = window.innerHeight;
                     var elementTop = reveals[i].getBoundingClientRect().top;
+                    var elementBottom = reveals[i].getBoundingClientRect().bottom;
                     var elementVisible = 200;
 
-                    if (elementTop < windowHeight - elementVisible) {
+                    if (elementTop < windowHeight - elementVisible && elementBottom > 0) {
                         reveals[i].classList.add("active");
                     } else {
                         reveals[i].classList.remove("active");
@@ -813,6 +787,7 @@
             window.addEventListener("scroll", reveal);
         });
     </script>
+
     <!-- all js here -->
 
     <!-- jquery latest version -->
